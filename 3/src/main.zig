@@ -1,5 +1,5 @@
 const std = @import("std");
-const data = @embedFile("testdata.txt");
+const data = @embedFile("data.txt");
 pub fn main() !void {
     var i: usize = 0;
     var sum: i32 = 0;
@@ -8,7 +8,7 @@ pub fn main() !void {
         var u = i;
         var firstnum: i32 = 0;
         var secondnum: i32 = 0;
-        std.debug.print("i : {}  value: {c}", .{ i, data[i] });
+        // std.debug.print("i : {}  value: {c}", .{ i, data[i] });
 
         if (docheck(&i)) {
             do = true;
@@ -17,7 +17,7 @@ pub fn main() !void {
         if (dontcheck(&i)) {
             do = false;
         }
-        std.debug.print("  i : {}  value: {c}\n", .{ i, data[i] });
+        // std.debug.print("  i : {}  value: {c}\n", .{ i, data[i] });
         if (data[u] != 'm') {
             continue;
         }
@@ -82,7 +82,7 @@ pub fn docheck(i: *usize) bool {
     if (data[j] != ')') {
         return false;
     }
-    i.* += 4;
+    i.* += 3;
     return true;
 }
 
@@ -116,7 +116,7 @@ pub fn dontcheck(i: *usize) bool {
     if (data[j] != ')') {
         return false;
     }
-    i.* += 7;
+    i.* += 6;
     return true;
 }
 
