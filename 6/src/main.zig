@@ -14,7 +14,7 @@ pub fn main() !void {
     var platser = std.AutoHashMap([2]usize, void).init(ally);
     defer platser.deinit();
 
-    var lines = std.mem.splitScalar(u8, data, '\n');
+        var lines = std.mem.splitScalar(u8, data, '\n');
 
     while (lines.next()) |line| {
         var list = std.ArrayList(u8).init(ally);
